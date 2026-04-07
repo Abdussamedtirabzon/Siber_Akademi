@@ -1,0 +1,61 @@
+/* style.css */
+:root {
+    --bg-color: #0a0a0a;
+    --card-bg: #161b22;
+    --accent-color: #00ff41;
+    --text-color: #e0e0e0;
+    --terminal-bg: #000000;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Courier New', Courier, monospace; }
+body { background-color: var(--bg-color); color: var(--text-color); display: flex; flex-direction: column; min-height: 100vh; }
+a { color: var(--accent-color); text-decoration: none; }
+button { background-color: var(--accent-color); color: #000; border: none; padding: 10px 15px; cursor: pointer; font-weight: bold; border-radius: 4px; transition: 0.3s; }
+button:hover { box-shadow: 0 0 10px var(--accent-color); }
+input, select, textarea { width: 100%; padding: 10px; margin: 5px 0; background: #222; border: 1px solid #444; color: var(--accent-color); border-radius: 4px; }
+
+/* Navbar / Header */
+.header { background-color: var(--card-bg); padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--accent-color); }
+.header h1 { font-size: 1.5rem; text-transform: uppercase; letter-spacing: 2px; text-shadow: 0 0 5px var(--accent-color); }
+.score-board { font-size: 1.2rem; font-weight: bold; color: var(--accent-color); }
+
+/* Landing Page (Karşılama Ekranı) */
+.hero { text-align: center; padding: 100px 20px; }
+.hero h2 { font-size: 3rem; margin-bottom: 20px; color: var(--accent-color); text-shadow: 0 0 15px var(--accent-color); }
+.hero p { font-size: 1.2rem; margin-bottom: 40px; color: #aaa; }
+.features { display: flex; justify-content: center; gap: 20px; margin-top: 50px; flex-wrap: wrap; }
+.feature-card { background: var(--card-bg); padding: 20px; border-radius: 8px; width: 300px; border: 1px solid #333; }
+
+/* LMS Layout */
+.lms-container { display: flex; flex: 1; overflow: hidden; }
+.sidebar { width: 300px; background-color: var(--card-bg); padding: 20px; overflow-y: auto; border-right: 1px solid #333; transition: 0.3s; }
+.main-content { flex: 1; padding: 40px; overflow-y: auto; }
+
+/* Accordion Sidebar */
+.category-title { cursor: pointer; font-weight: bold; padding: 10px; background: #222; margin-bottom: 5px; border-left: 3px solid var(--accent-color); }
+.lesson-list { list-style: none; padding-left: 15px; display: none; margin-bottom: 15px;}
+.lesson-list.active { display: block; }
+.lesson-item { padding: 8px 0; display: flex; justify-content: space-between;}
+.lesson-item a:hover { text-decoration: underline; }
+.completed-tick { color: var(--accent-color); font-weight: bold; }
+
+/* Lesson Page & Cards */
+.lesson-card { background: var(--card-bg); padding: 30px; border-radius: 8px; box-shadow: 0 0 20px rgba(0,255,65,0.1); border: 1px solid #333; }
+.lesson-card img { max-width: 100%; max-height: 300px; margin: 20px 0; border: 1px solid var(--accent-color); border-radius: 4px;}
+.lesson-content { line-height: 1.6; font-size: 1.1rem; margin-bottom: 30px; }
+
+/* Interactive Terminal / Quiz */
+.task-box { background: #111; padding: 20px; border-radius: 5px; border: 1px dashed var(--accent-color); margin-top: 20px;}
+.terminal { background: var(--terminal-bg); padding: 15px; border-radius: 5px; display: flex; align-items: center; margin-top: 10px; font-family: monospace; }
+.prompt { color: var(--accent-color); margin-right: 10px; font-weight: bold; white-space: nowrap; }
+.term-input { background: transparent; border: none; color: #fff; outline: none; width: 100%; font-size: 1rem; font-family: monospace; }
+
+/* Admin Panel */
+.admin-stats { display: flex; gap: 20px; margin-bottom: 30px;}
+.stat-box { background: var(--card-bg); padding: 20px; border-radius: 5px; flex: 1; text-align: center; border-bottom: 3px solid var(--accent-color);}
+.admin-section { background: var(--card-bg); padding: 20px; margin-bottom: 20px; border-radius: 5px; }
+
+@media (max-width: 768px) {
+    .lms-container { flex-direction: column; }
+    .sidebar { width: 100%; height: auto; border-right: none; border-bottom: 1px solid #333; }
+}
